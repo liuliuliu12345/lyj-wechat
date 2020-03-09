@@ -1,0 +1,14 @@
+<view class="container">
+  <input placeholder="请输入用户名" class="userInput" placeholder-style="color: #909090" />
+  <input placeholder="请输入密码" type="password" class="userInput mTop40" placeholder-style="color: #909090" />
+  
+
+  <view class="wh100">
+    <view class="mTop60"><button class="loginBtn" bindtap="handlerLogin">登  录</button></view>
+    <view class="mTop40 loginText">
+      <text class="mRight20">{{ isLogin }}</text>
+      <text>|</text>
+      <text class="mLeft20">{{ ForgetPassword }}</text>
+    </view>
+  </view>
+</view>
