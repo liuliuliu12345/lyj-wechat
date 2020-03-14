@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/register/register",
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/me"
@@ -32,9 +33,9 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#2d8cf0",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

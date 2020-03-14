@@ -1,14 +1,22 @@
 <view class="container">
-  <input placeholder="请输入用户名" class="userInput" placeholder-style="color: #909090" />
-  <input placeholder="请输入密码" type="password" class="userInput mTop40" placeholder-style="color: #909090" />
-  
+<view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="userinfo-avatar"> 获取头像 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    </block>
+  </view>
 
-  <view class="wh100">
-    <view class="mTop60"><button class="loginBtn" bindtap="handlerLogin">登  录</button></view>
-    <view class="mTop40 loginText">
-      <text class="mRight20">{{ isLogin }}</text>
+  <input placeholder="请输入手机号" maxlength="11" class="userInput mtop60" bindblur="onblurUserPhone" placeholder-style="color: #909090" />
+  		<text class="checkName mleft100">{{ messagePhone }}</text>
+  <input placeholder="请输入密码" maxlength="20" type="password" bindblur="onblurUserPwd" class="userInput" placeholder-style="color: #909090" />
+    		<text class="checkName mleft100">{{ messagePwd }}</text>
+  <view>
+    <view class="mtop60"><button class="loginBtn" bindtap="handlerLogin">登  录</button></view>
+    <view class="mtop40 loginText">
+      <text class="mright20"  bindtap="handlerRegister">{{ isLogin }}</text>
       <text>|</text>
-      <text class="mLeft20">{{ ForgetPassword }}</text>
+      <text class="mleft20">{{ ForgetPassword }}</text>
     </view>
   </view>
 </view>
