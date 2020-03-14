@@ -50,5 +50,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  login:function() {
+    wx.redirectTo({
+      url: '../login/login',
+    })
   }
 })

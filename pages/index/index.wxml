@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view class="container">
- <text class="iconfont iconchenggong2">字体图标</text>
+ <text class="iconfont iconchenggong2" bindtap="login">登录</text>
 </view>

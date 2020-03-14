@@ -1,6 +1,7 @@
 //获取应用实例,小程序入口的方法
 const app = getApp()
-import { requestServe } from '../../requestFile/requestFile'
+var DataRequest = require('../../requestFile/requestFile.js');
+
 import { validatorNumber } from '../../utils/util'
 Page({
   data: {
@@ -109,19 +110,27 @@ Page({
         messagePwd: '',
         messagePhone: ''
       })
-      console.log(this.data.phone, this.data.password);
       this.startLogin()
     }
   },
 
+  /**
+   * 登录
+   */
   startLogin: function() {
-    let data = {
-      a: 1
+    var params = {
+      'a': 1
     }
-    requestServe('/requestFile/ali',data, 'GET', (data) => {
-      console.log(data);
-      
-    })
+    // var data = DataRequest('/yichangdriver/common/userLogin', params, 'GET', (res) => {
+    //   console.log(res)
+    // }, null, null)
+    var data = DataRequest('/yichangdriver/common/userLogin', params, 'GET')
+    console.log(data)
+    if (data.status === 200) {
+      wx.reLaunch({
+        url: '../index/index'
+      })
+    }
   },
 
   // 注册
@@ -130,4 +139,4 @@ Page({
       url: '../register/register'
     })
   }
-})
+}) 
